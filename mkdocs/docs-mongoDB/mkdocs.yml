@@ -1,0 +1,41 @@
+site_name: Documentação do MongoDB
+site_url: https://example.com/
+site_description: Documentação completa do MongoDB.
+site_author: Dênis, Luis Felipe e Ronald.
+
+repo_name: denisdesouzac/trabalho-mkdocs
+repo_url: https://github.com/denisdesouzac/trabalho-mkdocs
+
+nav:
+  - Início: index.md
+  - Introdução: introducao.md
+  - Recursos: recursos.md
+  - Soluções: solucoes.md
+
+copyright: Copyright &copy; GAC116 - 2024
+
+theme:
+  name: material
+  language: pt-BR
+  palette: 
+    # Paleta quando está no modo light
+    - scheme: default
+      primary: green         # cor dos menus principais (verde MongoDB)
+      accent: teal           # cor dos links (teal para contraste)
+      toggle:
+        icon: material/brightness-7 # ícone para troca de modo
+        name: Trocar para modo escuro
+    # Paleta quando está no modo dark
+    - scheme: slate 
+      primary: teal    # cor dos menus principais no modo escuro
+      accent: lime           # cor dos links no modo escuro
+      toggle:
+        icon: material/brightness-4 # ícone para troca de modo (escuro)
+        name: Trocar para modo claro
+  favicon: imgs/favicon.ico  # adiciona um favicon do MongoDB
+  features:
+    - content.tabs.link             # habilita o vínculo de guias de conteúdo
+    - content.code.copy             # habilita a cópia de códigos da página
+
+extra_javascript:
+  - https://kit.fontawesome.com/7ff1941c7f.js
