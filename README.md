@@ -87,7 +87,7 @@ Dentro da pasta relatorio-mongodb, você encontrará um arquivo mkdocs.yml (conf
 
 8.2 Estrutura do Site
 
-- No arquivo mkdocs.yml, configure a navegação e o tema do site:
+- No arquivo mkdocs.yml, configure a navegação e o tema do site, segue um exemplo:
 
     ```bash
     site_name: Relatório Técnico sobre MongoDB
