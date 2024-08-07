@@ -91,6 +91,14 @@ Os **Guias de Introdução** são projetados para ajudar novos usuários a come�
 - **Perguntas Frequentes sobre IA Generativa**  
   Explore as **Perguntas Frequentes sobre IA Generativa** para aprender como os aplicativos MongoDB podem aprimorar a experiência do usuário utilizando a inteligência artificial generativa.
 
+## Tutoriais e Guias
+
+- **[Tutorial de Início Rápido](https://docs.mongodb.com/manual/quickstart/)**
+  Um guia passo a passo para começar a usar o MongoDB.
+
+- **[Melhores Práticas de Modelagem de Dados](https://docs.mongodb.com/manual/core/data-modeling-introduction/)**
+  Saiba como modelar dados efetivamente no MongoDB.
+
 ### MongoDB Drivers
 Você pode conectar seu aplicativo à sua implantação do MongoDB Atlas ou a um cluster do MongoDB auto-hospedado usando uma das bibliotecas oficiais do MongoDB.
 

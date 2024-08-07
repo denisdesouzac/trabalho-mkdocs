@@ -10,24 +10,22 @@ nav:
   - Início: index.md
   - Introdução: introducao.md
   - Recursos: recursos.md
-  - Soluções: solucoes.md
+  - Casos de Uso: solucoes.md
 
 copyright: Copyright &copy; GAC116 - 2024
 
 theme:
   name: material
   language: pt-BR
-  palette: 
-    # Paleta quando está no modo light
+  palette:
     - scheme: default
       primary: green         # cor dos menus principais (verde MongoDB)
       accent: teal           # cor dos links (teal para contraste)
       toggle:
         icon: material/brightness-7 # ícone para troca de modo
         name: Trocar para modo escuro
-    # Paleta quando está no modo dark
-    - scheme: slate 
-      primary: teal    # cor dos menus principais no modo escuro
+    - scheme: slate
+      primary: teal           # cor dos menus principais no modo escuro
       accent: lime           # cor dos links no modo escuro
       toggle:
         icon: material/brightness-4 # ícone para troca de modo (escuro)

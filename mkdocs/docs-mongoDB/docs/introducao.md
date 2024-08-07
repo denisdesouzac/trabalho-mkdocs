@@ -4,6 +4,12 @@
 
 O MongoDB é um banco de dados NoSQL de código aberto, conhecido por sua flexibilidade e escalabilidade. Diferente dos bancos de dados relacionais tradicionais, o MongoDB armazena dados em documentos JSON, permitindo que os dados sejam estruturados de maneira mais natural para muitas aplicações modernas. Ele é amplamente utilizado para o desenvolvimento de aplicativos que precisam lidar com grandes volumes de dados não estruturados ou semi-estruturados, fornecendo alto desempenho e disponibilidade.
 
+## Histórico e Evolução
+
+
+O MongoDB foi lançado pela primeira vez em 2009 e desde então passou por várias atualizações significativas. A versão 4.0 introduziu suporte para transações multi-documento, enquanto a versão 5.0 trouxe melhorias em desempenho e novos recursos como o suporte a dados de séries temporais.
+
+
 ## Principais Vantagens
 
 **Flexibilidade de Modelagem de Dados**: O MongoDB não exige esquemas rígidos como os bancos de dados relacionais. Isso permite que os desenvolvedores alterem a estrutura dos documentos sem precisar redefinir a estrutura de dados do banco, facilitando a evolução e manutenção do aplicativo.

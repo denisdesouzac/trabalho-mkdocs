@@ -63,3 +63,37 @@ No setor público, MongoDB é utilizado para gerenciar dados relacionados a serv
 
 Na indústria de manufatura, MongoDB é utilizado para monitorar e otimizar operações de produção, gerenciar dados de equipamentos e analisar desempenho. A capacidade de lidar com dados de sensores e equipamentos em tempo real permite uma manutenção preditiva e um melhor gerenciamento da cadeia de suprimentos.
 ![Fabricação Image](imgs/fabricacao.svg)
+
+## Exemplos
+
+## Estudos de Caso com MongoDB
+
+### eBay
+- **Desafio:** eBay precisava de uma solução escalável para lidar com grandes volumes de dados e tráfego intenso.
+- **Solução:** Implementou o MongoDB para armazenar e processar dados de eventos e logs em tempo real.
+- **Resultado:** Melhor desempenho nas operações de busca e análise, escalabilidade para lidar com o crescimento do tráfego e capacidade de processar grandes volumes de dados com alta eficiência.
+
+
+### Adobe
+- **Desafio:** Adobe precisava de uma plataforma que suportasse grandes volumes de dados não estruturados e permitisse análises rápidas.
+- **Solução:** Utilizou o MongoDB para gerenciar e analisar dados de comportamento do usuário e feedback em tempo real.
+- **Resultado:** Melhorou a capacidade de personalização e análise de dados em tempo real, resultando em uma experiência mais personalizada para os usuários e insights valiosos sobre o comportamento do cliente.
+
+
+### Forbes
+- **Desafio:** Forbes buscava uma solução para lidar com a carga de trabalho crescente e melhorar a performance de seu sistema de gerenciamento de conteúdo.
+- **Solução:** Adotou o MongoDB para gerenciar o conteúdo digital e os dados relacionados aos artigos e interações dos leitores.
+- **Resultado:** Aumentou a eficiência e a agilidade na entrega de conteúdo, melhorou a escalabilidade e o desempenho geral do sistema.
+
+
+### Netflix
+- **Desafio:** Netflix precisava de uma solução que suportasse a análise de grandes volumes de dados de streaming e oferecesse alta disponibilidade.
+- **Solução:** Utilizou o MongoDB para armazenar e analisar dados de visualização e recomendação em tempo real.
+- **Resultado:** Melhorou a personalização das recomendações e a capacidade de processar dados em tempo real, proporcionando uma experiência de usuário mais envolvente e personalizada.
+
+
+### T-Mobile
+- **Desafio:** T-Mobile precisava de uma solução para gerenciar e analisar dados de clientes e operações em tempo real.
+- **Solução:** Implementou o MongoDB para lidar com dados de cliente, histórico de chamadas e informações de rede.
+- **Resultado:** Facilitou a análise e gestão de dados complexos, melhorou a eficiência operacional e ajudou na personalização das ofertas para clientes.
+
