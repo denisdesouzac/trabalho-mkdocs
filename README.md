@@ -85,7 +85,7 @@ O MongoDB foi lançado pela 10gen (agora MongoDB Inc.) em 2009. Ele foi desenvol
 
 Dentro da pasta relatorio-mongodb, você encontrará um arquivo mkdocs.yml (configuração do site) e uma pasta docs (conteúdo do site).
 
-8.2 Estrutura do Site
+### 8.2 [Estrutura do Site](#estrutura-do-site)
 
 - No arquivo mkdocs.yml, configure a navegação e o tema do site, segue um exemplo:
 
@@ -105,11 +105,11 @@ Dentro da pasta relatorio-mongodb, você encontrará um arquivo mkdocs.yml (conf
     - Referências: referencias.md
     theme: readthedocs
 
-8.3 Customização
+### 8.3 [Customização](#customizacao)
 
 - Adicione conteúdo aos arquivos Markdown na pasta docs e personalize o tema conforme necessário.
 
-8.4 Publicação
+### 8.4 [Publicação](#publicacao)
 
 1. Iniciar o servidor local:
     ```bash
@@ -141,11 +141,11 @@ Adicione o repositório remoto ao seu projeto
 - Vá para as configurações do repositório no GitHub.
 - Na seção "GitHub Pages", escolha a branch gh-pages.
 
-9. Conclusão
+### 9. [Conclusão](#conclusao)
 
 Neste relatório, exploramos o MongoDB, abordando seus principais aspectos técnicos, vantagens, desvantagens e aplicações. Com base nos dados apresentados, concluímos que o MongoDB é uma tecnologia poderosa para uma variedade de cenários de uso, oferecendo flexibilidade e escalabilidade.
 
-10. Referências
+### 10. [Referências](#referencias)
 
 [1] MongoDB Inc. (2024). [What is MongoDB?](https://www.mongodb.com/what-is-mongodb) Acesso em: 07 de agosto de 2024.
 

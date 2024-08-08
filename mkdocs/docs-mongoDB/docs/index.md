@@ -11,13 +11,16 @@ O MongoDB é um banco de dados NoSQL orientado a documentos que fornece flexibil
 ## Navegue pelo Conteúdo
 
 ### [Introdução](introducao.md)
-Descubra o que é o MongoDB e por que ele é uma escolha popular para gerenciar grandes volumes de dados de forma escalável.
+Descubra o que é o MongoDB e por que ele é uma escolha popular para gerenciar grandes volumes de dados de forma escalável, alem de suas vantagens e desvantagens.
 
 ### [Recursos](recursos.md)
-Explore a evolução do MongoDB desde o seu lançamento até o status atual, incluindo marcos importantes e mudanças na tecnologia.
+Explore a evolução do MongoDB desde o seu lançamento até o status atual, incluindo marcos importantes e mudanças na tecnologia e um pouco de recrusos que são associados a ele.
 
 ### [Casos de Uso](solucoes.md)
-Entenda os aspectos técnicos do MongoDB, como sua arquitetura orientada a documentos, modelagem de dados, consultas e replicação.
+Entenda os aspectos técnicos do MongoDB, como sua arquitetura orientada a documentos, modelagem de dados, consultas e replicação, isso aplicado em casos de uso do MongoDB.
+
+### [Implementação](implementacao.md)
+Veja exemplos de implementação do mongoDB
 
 
 ## Recursos Adicionais e Comunidade

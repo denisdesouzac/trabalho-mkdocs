@@ -10,7 +10,8 @@ nav:
   - Início: index.md
   - Introdução: introducao.md
   - Recursos: recursos.md
-  - Casos de Uso: solucoes.md
+  - Casos de Uso: Casos_de_uso.md
+  - Implementação: Implementacao.md
 
 copyright: Copyright &copy; GAC116 - 2024
 
