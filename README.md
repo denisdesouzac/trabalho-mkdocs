@@ -4,7 +4,7 @@ Autores:
 
 - Denis de Souza Cordeiro
 - Luis Felipe Costa Teixeira
-- Ronald de Souza
+- Ronald de Souza Galdino
 
 ## Sumário
 1. [Introdução](#introducao)
