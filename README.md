@@ -6,7 +6,7 @@ Autores:
 - Luis Felipe Costa Teixeira
 - Ronald de Souza Galdino
 
-### GitHub Pages: [Link](https://www.mongodb.com/what-is-mongodb](https://denisdesouzac.github.io/trabalho-mkdocs/index.html))
+### GitHub Pages: [Link](https://denisdesouzac.github.io/trabalho-mkdocs/)
 
 ## Sumário
 1. [Introdução](#introducao)
