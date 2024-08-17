@@ -12,22 +12,28 @@
         <meta name="author" content="Dênis, Luis Felipe e Ronald.">
       
       
+        <link rel="canonical" href="https://example.com/introducao/">
       
       
+        <link rel="prev" href="..">
       
-      <link rel="icon" href="/imgs/favicon.ico">
+      
+        <link rel="next" href="../recursos/">
+      
+      
+      <link rel="icon" href="../imgs/favicon.ico">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.7">
     
     
       
-        <title>Documentação do MongoDB</title>
+        <title>Introdução - Documentação do MongoDB</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.85d0ee34.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
       
       
 
@@ -46,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,6 +80,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#introducao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -86,7 +97,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="/." title="Documentação do MongoDB" class="md-header__button md-logo" aria-label="Documentação do MongoDB" data-md-component="logo">
+    <a href=".." title="Documentação do MongoDB" class="md-header__button md-logo" aria-label="Documentação do MongoDB" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -106,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Introdução
             
           </span>
         </div>
@@ -216,7 +227,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Documentação do MongoDB" class="md-nav__button md-logo" aria-label="Documentação do MongoDB" data-md-component="logo">
+    <a href=".." title="Documentação do MongoDB" class="md-nav__button md-logo" aria-label="Documentação do MongoDB" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -245,7 +256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -262,9 +273,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/introducao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -273,6 +304,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-mongodb" class="md-nav__link">
+    O Que é o MongoDB?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-e-evolucao" class="md-nav__link">
+    Histórico e Evolução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-vantagens" class="md-nav__link">
+    Principais Vantagens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-desvantagens" class="md-nav__link">
+    Principais Desvantagens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramentas-para-mongodb" class="md-nav__link">
+    Ferramentas para MongoDB
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -283,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/recursos/" class="md-nav__link">
+      <a href="../recursos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -302,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/solucoes/" class="md-nav__link">
+      <a href="../solucoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -321,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/implementacao/" class="md-nav__link">
+      <a href="../implementacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -351,6 +437,51 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-e-o-mongodb" class="md-nav__link">
+    O Que é o MongoDB?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historico-e-evolucao" class="md-nav__link">
+    Histórico e Evolução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-vantagens" class="md-nav__link">
+    Principais Vantagens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principais-desvantagens" class="md-nav__link">
+    Principais Desvantagens
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ferramentas-para-mongodb" class="md-nav__link">
+    Ferramentas para MongoDB
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -362,8 +493,37 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="introducao">Introdução</h1>
+<h2 id="o-que-e-o-mongodb">O Que é o MongoDB?</h2>
+<p>O MongoDB é um banco de dados NoSQL de código aberto, conhecido por sua flexibilidade e escalabilidade. Diferente dos bancos de dados relacionais tradicionais, o MongoDB armazena dados em documentos JSON, permitindo que os dados sejam estruturados de maneira mais natural para muitas aplicações modernas. Ele é amplamente utilizado para o desenvolvimento de aplicativos que precisam lidar com grandes volumes de dados não estruturados ou semi-estruturados, fornecendo alto desempenho e disponibilidade.</p>
+<h2 id="historico-e-evolucao">Histórico e Evolução</h2>
+<p>O MongoDB foi lançado pela primeira vez em 2009 e desde então passou por várias atualizações significativas. A versão 4.0 introduziu suporte para transações multi-documento, enquanto a versão 5.0 trouxe melhorias em desempenho e novos recursos como o suporte a dados de séries temporais.</p>
+<h2 id="principais-vantagens">Principais Vantagens</h2>
+<p><strong>Flexibilidade de Modelagem de Dados</strong>: O MongoDB não exige esquemas rígidos como os bancos de dados relacionais. Isso permite que os desenvolvedores alterem a estrutura dos documentos sem precisar redefinir a estrutura de dados do banco, facilitando a evolução e manutenção do aplicativo.</p>
+<p><strong>Escalabilidade Horizontal</strong>: O MongoDB oferece suporte nativo à sharding, uma técnica de escalabilidade horizontal que permite dividir os dados em várias máquinas, o que é essencial para lidar com grandes volumes de dados e altos níveis de tráfego.</p>
+<p><strong>Alta Performance</strong>: Com sua capacidade de armazenar dados em documentos e indexar vários campos, o MongoDB é otimizado para consultas rápidas e eficientes, tornando-o adequado para aplicativos em tempo real.</p>
+<p><strong>Disponibilidade e Recuperação de Desastres</strong>: O MongoDB suporta réplicas automáticas de dados entre diferentes servidores, garantindo alta disponibilidade e facilitando a recuperação de dados em caso de falhas.</p>
+<p><strong>Fácil Integração com Ambientes de Desenvolvimento Modernos</strong>: A estrutura JSON-like do MongoDB torna sua integração com linguagens de programação modernas e frameworks ágil e intuitiva, especialmente em arquiteturas baseadas em microserviços.</p>
+<h2 id="principais-desvantagens">Principais Desvantagens</h2>
+<p><strong>Consistência Eventual</strong>: Em cenários de alta disponibilidade e replicação de dados, o MongoDB pode apresentar consistência eventual, o que significa que pode haver um atraso na sincronização dos dados entre réplicas, resultando em leituras desatualizadas.</p>
+<p><strong>Complexidade de Consultas</strong>: Embora o MongoDB ofereça flexibilidade na modelagem de dados, algumas consultas complexas podem ser mais difíceis de implementar e menos eficientes em comparação com bancos de dados relacionais que utilizam SQL.</p>
+<p><strong>Gerenciamento de Transações</strong>: O suporte a transações no MongoDB é mais recente e, embora robusto, pode não ser tão avançado quanto o encontrado em bancos de dados relacionais tradicionais, especialmente em sistemas que exigem forte consistência transacional.</p>
+<p><strong>Necessidade de Planejamento de Índices</strong>: Para manter o desempenho otimizado, é importante planejar cuidadosamente os índices no MongoDB, o que pode exigir um conhecimento detalhado sobre o funcionamento do banco.</p>
+<h2 id="ferramentas-para-mongodb">Ferramentas para MongoDB</h2>
+<p>O <a href="https://www.mongodb.com/products/compass">MongoDB Compass</a> é uma ferramenta gráfica que permite explorar e interagir visualmente com os dados armazenados no MongoDB, facilitando o gerenciamento e a análise dos dados.</p>
+<p>O <a href="https://robomongo.org/">Robo 3T</a> é outra ferramenta popular que oferece uma interface de usuário leve para o MongoDB, permitindo que os desenvolvedores executem consultas e gerenciem o banco de dados com facilidade.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -401,10 +561,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["content.tabs.link", "content.code.copy"], "search": "/assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="https://kit.fontawesome.com/7ff1941c7f.js"></script>
       

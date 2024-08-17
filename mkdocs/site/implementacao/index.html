@@ -1,0 +1,879 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentação completa do MongoDB.">
+      
+      
+        <meta name="author" content="Dênis, Luis Felipe e Ronald.">
+      
+      
+        <link rel="canonical" href="https://example.com/implementacao/">
+      
+      
+        <link rel="prev" href="../solucoes/">
+      
+      
+      
+      <link rel="icon" href="../imgs/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.7">
+    
+    
+      
+        <title>Implementação - Documentação do MongoDB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="teal">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exemplos-de-implementacao-do-mongodb" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Documentação do MongoDB" class="md-header__button md-logo" aria-label="Documentação do MongoDB" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentação do MongoDB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implementação
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="teal"  aria-label="Trocar para modo escuro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Trocar para modo escuro" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Trocar para modo claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Trocar para modo claro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/denisdesouzac/trabalho-mkdocs" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    denisdesouzac/trabalho-mkdocs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentação do MongoDB" class="md-nav__button md-logo" aria-label="Documentação do MongoDB" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Documentação do MongoDB
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/denisdesouzac/trabalho-mkdocs" title="Ir para repositório" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    denisdesouzac/trabalho-mkdocs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introducao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solucoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Casos de Uso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Implementação
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Implementação
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-configurando-o-mongodb-em-um-servidor-local" class="md-nav__link">
+    1. Configurando o MongoDB em um Servidor Local
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configurando o MongoDB em um Servidor Local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-criando-um-banco-de-dados-e-uma-colecao" class="md-nav__link">
+    2.0 Criando um Banco de Dados e uma Coleção
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 Criando um Banco de Dados e uma Coleção">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo_1" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-consultando-dados-no-mongodb" class="md-nav__link">
+    3.0 Consultando Dados no MongoDB
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0 Consultando Dados no MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo_2" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configurando-replica-sets" class="md-nav__link">
+    4. Configurando Replica Sets
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configurando Replica Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo_3" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exemplo-de-implementacao-real-sistema-de-gerenciamento-de-usuarios-com-mongodb" class="md-nav__link">
+    5. Exemplo de Implementação Real: Sistema de Gerenciamento de Usuários com MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-estrutura-do-projeto" class="md-nav__link">
+    1. Estrutura do Projeto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurando-a-conexao-com-o-mongodb" class="md-nav__link">
+    2. Configurando a Conexão com o MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-executando-a-aplicacao" class="md-nav__link">
+    3. Executando a Aplicação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-expansao-do-sistema" class="md-nav__link">
+    4. Expansão do Sistema
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-configurando-o-mongodb-em-um-servidor-local" class="md-nav__link">
+    1. Configurando o MongoDB em um Servidor Local
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configurando o MongoDB em um Servidor Local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-criando-um-banco-de-dados-e-uma-colecao" class="md-nav__link">
+    2.0 Criando um Banco de Dados e uma Coleção
+  </a>
+  
+    <nav class="md-nav" aria-label="2.0 Criando um Banco de Dados e uma Coleção">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo_1" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-consultando-dados-no-mongodb" class="md-nav__link">
+    3.0 Consultando Dados no MongoDB
+  </a>
+  
+    <nav class="md-nav" aria-label="3.0 Consultando Dados no MongoDB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo_2" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-configurando-replica-sets" class="md-nav__link">
+    4. Configurando Replica Sets
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Configurando Replica Sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#passo-a-passo_3" class="md-nav__link">
+    Passo a Passo:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-exemplo-de-implementacao-real-sistema-de-gerenciamento-de-usuarios-com-mongodb" class="md-nav__link">
+    5. Exemplo de Implementação Real: Sistema de Gerenciamento de Usuários com MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-estrutura-do-projeto" class="md-nav__link">
+    1. Estrutura do Projeto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-configurando-a-conexao-com-o-mongodb" class="md-nav__link">
+    2. Configurando a Conexão com o MongoDB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-executando-a-aplicacao" class="md-nav__link">
+    3. Executando a Aplicação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-expansao-do-sistema" class="md-nav__link">
+    4. Expansão do Sistema
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="exemplos-de-implementacao-do-mongodb">Exemplos de Implementação do MongoDB</h1>
+<h2 id="1-configurando-o-mongodb-em-um-servidor-local">1. Configurando o MongoDB em um Servidor Local</h2>
+<h3 id="passo-a-passo">Passo a Passo:</h3>
+<p><strong>Instalação</strong>: Para instalar o MongoDB em um servidor local, você pode usar os seguintes comandos (no caso de um sistema Ubuntu):</p>
+<pre><code>sudo apt-get update
+sudo apt-get install -y mongodb
+</code></pre>
+<p><strong>Inicializando o Servidor</strong>: Após a instalação, inicie o serviço do MongoDB:</p>
+<pre><code>sudo systemctl start mongodb
+</code></pre>
+<p><strong>Verificando o Status</strong>: Certifique-se de que o MongoDB está funcionando corretamente</p>
+<pre><code>sudo systemctl status mongodb
+</code></pre>
+<p><strong>Conectando ao MongoDB</strong>: Use o cliente de linha de comando MongoDB para se conectar ao servidor:</p>
+<pre><code>mongo
+</code></pre>
+<p><strong>Resultado</strong>:</p>
+<ul>
+<li>O MongoDB está agora rodando em seu servidor local e pode ser acessado via o terminal ou ferramentas de gerenciamento como o MongoDB Compass.</li>
+</ul>
+<h2 id="20-criando-um-banco-de-dados-e-uma-colecao">2.0 Criando um Banco de Dados e uma Coleção</h2>
+<h3 id="passo-a-passo_1">Passo a Passo:</h3>
+<p><strong>Criando um Banco de Dados</strong>: No shell MongoDB, você pode criar um novo banco de dados simplesmente selecionando-o:</p>
+<pre><code>use meuBancoDeDados
+</code></pre>
+<p><strong>Criando uma Coleção</strong>: Depois de selecionar o banco de dados, crie uma nova coleção:</p>
+<pre><code>db.createCollection("minhaColecao")
+</code></pre>
+<p><strong>Inserindo Documentos</strong>: Adicione documentos à coleção recém-criada:</p>
+<pre><code>db.minhaColecao.insertOne({ nome: "Dênis", idade: 28, profissão: "Desenvolvedor" })
+db.minhaColecao.insertMany([
+{ nome: "Luis", idade: 30, profissão: "Engenheiro" },
+{ nome: "Ronald", idade: 25, profissão: "Analista" }
+])
+</code></pre>
+<p><strong>Resultado</strong>:</p>
+<ul>
+<li>Agora, você tem um banco de dados com uma coleção que contém documentos JSON.</li>
+</ul>
+<h2 id="30-consultando-dados-no-mongodb">3.0 Consultando Dados no MongoDB</h2>
+<h3 id="passo-a-passo_2">Passo a Passo:</h3>
+<p><strong>Buscando Todos os Documentos</strong>: Para recuperar todos os documentos em uma coleção:</p>
+<pre><code>db.minhaColecao.find()
+</code></pre>
+<p><strong>Buscando Documentos Específicos</strong>: Para buscar documentos que atendem a certos critérios:</p>
+<pre><code>db.minhaColecao.find({ idade: { $gt: 25 } })
+</code></pre>
+<p><strong>Atualizando Documentos</strong>: Para atualizar documentos existentes:</p>
+<pre><code>db.minhaColecao.updateOne(
+{ nome: "Dênis" },
+{ $set: { idade: 29 } }
+)
+</code></pre>
+<p><strong>Deletando Documentos</strong>: Para remover documentos de uma coleção:</p>
+<pre><code>db.minhaColecao.deleteOne({ nome: "Ronald" })
+</code></pre>
+<p><strong>Resultado</strong>:</p>
+<ul>
+<li>Essas operações básicas permitem que você gerencie e manipule dados armazenados no MongoDB.</li>
+</ul>
+<h2 id="4-configurando-replica-sets">4. Configurando Replica Sets</h2>
+<h3 id="passo-a-passo_3">Passo a Passo:</h3>
+<p><strong>Iniciando um Replica Set</strong>: Para iniciar um Replica Set, modifique o arquivo de configuração do MongoDB (mongod.conf) para incluir:</p>
+<pre><code>replication:
+replSetName: "meuReplicaSet"
+</code></pre>
+<p><strong>Iniciando o MongoDB com Replica Set</strong>: Reinicie o MongoDB com o novo arquivo de configuração:</p>
+<pre><code>sudo systemctl restart mongodb
+</code></pre>
+<p><strong>Iniciando o Replica Set: No shell do MongoDB</strong>:</p>
+<pre><code>rs.initiate()
+</code></pre>
+<p><strong>Adicionando Membros</strong>: Adicione membros ao Replica Set:</p>
+<pre><code>rs.add("mongo2.example.net:27017")
+rs.add("mongo3.example.net:27017")
+</code></pre>
+<p><strong>Resultado</strong>:</p>
+<ul>
+<li>Agora você tem um Replica Set configurado para alta disponibilidade e redundância de dados.</li>
+</ul>
+<h2 id="5-exemplo-de-implementacao-real-sistema-de-gerenciamento-de-usuarios-com-mongodb">5. Exemplo de Implementação Real: Sistema de Gerenciamento de Usuários com MongoDB</h2>
+<h2 id="1-estrutura-do-projeto">1. Estrutura do Projeto</h2>
+<p><strong>Crie um diretório para o seu projeto e inicialize um novo projeto Node.js</strong>:</p>
+<pre><code>mkdir sistema-usuarios
+cd sistema-usuarios
+npm init -y
+</code></pre>
+<p><strong>Instale as dependências necessárias, como o driver do MongoDB e o Express.js para criar um servidor web simples</strong>:</p>
+<pre><code>npm install express mongodb
+</code></pre>
+<h2 id="2-configurando-a-conexao-com-o-mongodb">2. Configurando a Conexão com o MongoDB</h2>
+<p><strong>Crie um arquivo index.js na raiz do projeto e configure a conexão com o MongoDB</strong>:</p>
+<pre><code>const express = require('express');
+const { MongoClient } = require('mongodb');
+
+const app = express();
+const port = 3000;
+
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+
+async function connectDB() {
+    try {
+        await client.connect();
+        console.log("Conectado ao MongoDB!");
+        const database = client.db('sistemaUsuarios');
+        const usuarios = database.collection('usuarios');
+
+        // Criar um usuário exemplo
+        await usuarios.insertOne({ nome: "João", email: "joao@example.com", idade: 30 });
+
+        app.get('/', async (req, res) =&gt; {
+            const allUsers = await usuarios.find().toArray();
+            res.json(allUsers);
+        });
+
+        app.listen(port, () =&gt; {
+            console.log(`Servidor rodando em http://localhost:${port}`);
+        });
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+connectDB();
+</code></pre>
+<h2 id="3-executando-a-aplicacao">3. Executando a Aplicação</h2>
+<p><strong>Para rodar a aplicação, utilize o comando</strong>:</p>
+<pre><code>node index.js
+</code></pre>
+<ul>
+<li>Abra o navegador e acesse http://localhost:3000. Você verá uma lista de usuários que foi inserida no banco de dados MongoDB.</li>
+</ul>
+<h2 id="4-expansao-do-sistema">4. Expansão do Sistema</h2>
+<ul>
+<li>Agora que a estrutura básica está pronta, você pode expandir o sistema adicionando rotas para criar, atualizar e deletar usuários:</li>
+</ul>
+<p><strong>Criando um Novo Usuário</strong></p>
+<p>Adicione uma rota POST para criar novos usuários:</p>
+<pre><code>app.use(express.json());
+
+app.post('/usuarios', async (req, res) =&gt; {
+    const novoUsuario = req.body;
+    const resultado = await usuarios.insertOne(novoUsuario);
+    res.json({ message: 'Usuário criado com sucesso!', id: resultado.insertedId });
+});
+</code></pre>
+<p><strong>Atualizando um Usuário</strong></p>
+<p>Adicione uma rota PUT para atualizar os dados de um usuário existente:</p>
+<pre><code>app.put('/usuarios/:id', async (req, res) =&gt; {
+    const id = req.params.id;
+    const novosDados = req.body;
+
+    await usuarios.updateOne({ _id: new ObjectId(id) }, { $set: novosDados });
+    res.json({ message: 'Usuário atualizado com sucesso!' });
+});
+</code></pre>
+<p><strong>Deletando um Usuário</strong></p>
+<p>Adicione uma rota DELETE para remover um usuário:</p>
+<pre><code>app.delete('/usuarios/:id', async (req, res) =&gt; {
+    const id = req.params.id;
+
+    await usuarios.deleteOne({ _id: new ObjectId(id) });
+    res.json({ message: 'Usuário deletado com sucesso!' });
+});
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; GAC116 - 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "content.code.copy"], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://kit.fontawesome.com/7ff1941c7f.js"></script>
+      
+    
+  </body>
+</html>
